@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversário de Niterói essa semana?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .botoes {
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        #sim {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #sim:hover {
+            background-color: #45a049;
+        }
+
+        #nao {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aniversário de Niterói essa semana?</h1>
+    <div class="botoes">
+        <button id="sim" onclick="alert('Sortudo! 😎 Aproveite a folga!')">Sim</button>
+        <button id="nao">Não</button>
+    </div>
+
+    <script>
+        const naoBtn = document.getElementById('nao');
+
+        naoBtn.addEventListener('mouseover', () => {
+            const larguraJanela = window.innerWidth - 100;
+            const alturaJanela = window.innerHeight - 100;
+            const novaX = Math.random() * larguraJanela;
+            const novaY = Math.random() * alturaJanela;
+            naoBtn.style.left = `${novaX}px`;
+            naoBtn.style.top = `${novaY}px`;
+        });
+    </script>
+</body>
+</html>
